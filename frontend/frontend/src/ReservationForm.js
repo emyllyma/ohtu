@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import TimeSlotPicker from './TimeSlotPicker';
 
 function ReservationForm() {
   const [name, setName] = useState('');
@@ -21,13 +22,17 @@ function ReservationForm() {
     setTable(event.target.value);
   };
 
-  const handleTimePeriodChange = (event) => {
-    setTimePeriod(event.target.value);
+  const handleTimeSelect = (time) => {
+    setTimePeriod(time);
   }
+
+  // const handleTimePeriodChange = (event) => {
+  //   setTimePeriod(event.target.value);
+  // }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:5000/api/reservations', { // Replace with your server URL
+    fetch('http://localhost:5000/api/reservations', { //local server url, port 5000
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -47,22 +52,27 @@ function ReservationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name:
+        Varaajan nimi:
         <input type="text" value={name} onChange={handleNameChange} />
       </label>
       <br />
       <label>
-        Email:
+        Sähköposti:
         <input type="email" value={email} onChange={handleEmailChange} />
       </label>
       <br />
       <label>
         Pöytä:
         <select value={table} onChange={handleTableChange}>
-          <option value="">Select a table</option>
-          <option value="Table 1">Table 1</option>
-          <option value="Table 2">Table 2</option>
-          <option value="Table 3">Table 3</option>
+          
+          <option value="Pöytä 1">Pöytä 1</option>
+          <option value="Pöytä 2">Pöytä 2</option>
+          <option value="Pöytä 3">Pöytä 3</option>
+          <option value="Pöytä 4">Pöytä 4</option>
+          <option value="Pöytä 5">Pöytä 5</option>
+          <option value="Pöytä 6">Pöytä 6</option>
+          <option value="Pöytä 7">Pöytä 7</option>
+          <option value="Pöytä 8">Pöytä 8</option>
         </select>
       </label>
       <label>
@@ -70,8 +80,9 @@ function ReservationForm() {
         <ReactDatePicker selected={reservationDate} onChange={(date) => setReservationDate(date)} />
       </label>
       <label>
-        Time Period:
-        <input type="text" value={timePeriod} onChange={handleTimePeriodChange} />
+        Valitse aika:
+        <TimeSlotPicker onTimeSelect={handleTimeSelect} />
+        {/* <input type="text" value={timePeriod} onChange={handleTimePeriodChange} /> */}
       </label>
       <br />
       <button type="submit">Tee varaus</button>

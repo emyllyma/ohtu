@@ -1,0 +1,30 @@
+/* TimeSlotPicker.css */
+.time-slot-picker {
+    display: flex;
+    align-items: center;
+  }
+  
+  .time-slots {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  
+  .time-slot {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  
+  .time-slot.selected {
+    border-color: blue;
+    background-color: lightblue;
+  }
+  
+  .scroll-button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
