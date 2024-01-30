@@ -1,0 +1,11 @@
+npm install react-datepicker (frontend)
+mongoose
+cors
+
+
+
+
+
+
+npm install express (backend)
+npm install concurrently 

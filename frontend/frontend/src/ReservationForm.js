@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function ReservationForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [table, setTable] = useState('');
+  const [reservationDate, setReservationDate] = useState(new Date());
+  const [timePeriod, setTimePeriod] = useState('');
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -17,6 +21,10 @@ function ReservationForm() {
     setTable(event.target.value);
   };
 
+  const handleTimePeriodChange = (event) => {
+    setTimePeriod(event.target.value);
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch('http://localhost:5000/api/reservations', { // Replace with your server URL
@@ -24,7 +32,7 @@ function ReservationForm() {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ name, email, table })
+    body: JSON.stringify({ name, email, table, date: reservationDate, timePeriod})
   })
   .then(response => response.json())
   .then(data=> {
@@ -49,17 +57,24 @@ function ReservationForm() {
       </label>
       <br />
       <label>
-        Table:
+        Pöytä:
         <select value={table} onChange={handleTableChange}>
           <option value="">Select a table</option>
           <option value="Table 1">Table 1</option>
           <option value="Table 2">Table 2</option>
           <option value="Table 3">Table 3</option>
-        
         </select>
       </label>
+      <label>
+        Päivämäärä:
+        <ReactDatePicker selected={reservationDate} onChange={(date) => setReservationDate(date)} />
+      </label>
+      <label>
+        Time Period:
+        <input type="text" value={timePeriod} onChange={handleTimePeriodChange} />
+      </label>
       <br />
-      <button type="submit">Reserve</button>
+      <button type="submit">Tee varaus</button>
     </form>
   );
 }
