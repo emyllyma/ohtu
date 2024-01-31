@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import ReactDatePicker from 'react-datepicker';
+import ReactDatePicker from 'react-datepicker'; // calendar for dates
 import 'react-datepicker/dist/react-datepicker.css';
-import TimeSlotPicker from './TimeSlotPicker';
+import TimeSlotPicker from './TimeSlotPicker'; // selecting time 
 
+// create form to let users make reservations
 function ReservationForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

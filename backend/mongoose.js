@@ -1,6 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // import mongoose
 
-mongoose.connect('mongodb+srv://maunuDB:KmMUd4IKOFhcv495@cluster0.7tr3snz.mongodb.net/myData', {
+// connect to "myData" using maunuDB credentials
+// store credentials into environment variables later
+mongoose.connect('mongodb+srv://maunuDB:KmMUd4IKOFhcv495@cluster0.7tr3snz.mongodb.net/myData', { 
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
