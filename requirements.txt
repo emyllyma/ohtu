@@ -8,5 +8,5 @@ react-router-dom
 
 
 Backend: 
-npm install express (backend)
+npm install express
 npm install concurrently 
