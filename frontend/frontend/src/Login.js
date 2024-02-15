@@ -28,6 +28,7 @@ const Login = ({ onLogin }) => {
       <Link to="/register" className="link-to-register">
         Eikö sinulla ole käyttäjää? Rekisteröidy täältä!
       </Link>
+      
     </div>
   );
 };

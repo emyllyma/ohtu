@@ -4,9 +4,12 @@ import ReservationForm from './ReservationForm';
 import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
-import Svaihto from './Svaihto';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Svaihto from './Svaihto';
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
 
 function LoginHandler({ onLogin }) {
   const navigate = useNavigate();
@@ -45,7 +48,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reservationform" element={isLoggedIn ? <ReservationForm /> : <Navigate replace to="/login" />} />
           <Route path="/svaihto" element={<Svaihto />} />
-          <Route path="/login" element={<Svaihto />} />
+          
         </Routes>
       </Router>
     

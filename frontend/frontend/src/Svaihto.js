@@ -1,47 +1,49 @@
-import React, { useState} from 'react';
-import {Link } from 'react-router-dom';
-import './App.css';
+import { useState } from "react"
+import './App.css'; // Import the CSS file
+import { Link } from 'react-router-dom';
 
+const Svaihto = () => {
+    const [formState, setFormState] = useState({});
 
-function Svaihto() {
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const config = {
+        Username: 'emiliam.myllymaki@yopmail.com',
+        Password: '388F9A3817C752A26BA7290ADD18E1EC172F',
+        Host: 'smtp.elasticemail.com',
+        Port: '2525',
+        To: 'them@website.com',
+        From: "you@isp.com",
+        Subject: "This is the subject",
+        Body: "And this is the body"
+    }
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const handleResetPassword = () => {
-        // Tässä vaiheessa voit kutsua palvelinta nollatakseen salasanan
-            // ja käsitellä nollauksen palvelimen puolella.
-
-            // Simuloidaan palvelimen vastaus
-        if (!email) {
-            setMessage('Syötä sähköpostiosoitteesi');
-        } else {
-            setMessage(`Uusi salasana on lähetetty sähköpostiin: ${email}. Tarkista sähköpostisi.`);
-        }
+    const changeHandler = (event) => {
+        setFormState({ ...formState, [event.target.name]: event.target.value });
     };
 
     return (
-        <div className="App">
-            <h1 className='Otsikko'>Vaihda Salasana</h1>
-            <p className='Ohjeistus'>Syötä sähköpostiosoitteesi ja uusi salasana lähetetään antamaasi sähköpostiosoitteeseen:</p>
-            <div>
-                <label className='labeli' htmlFor="email">Sähköpostiosoite:</label> <br></br>
+        <div>
+            <form>
+                <input
+                    type="text"
+                    name="name"
+                    value=""
+                    onChange={changeHandler}
+                    className="border"
+                />
                 <input
                     type="email"
-                    id="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                    required
+                    name="email"
+                    value=""
+                    onChange={changeHandler}
+                    className="border"
                 />
-            </div>
-            <button onClick={handleResetPassword}>Nollaa salasana</button>
-            {message && <p>{message}</p>}
-            <p><Link to="/login">Palaa etusivulle</Link></p>
+                <input type="submit" value="Lähetä uusi salasana"></input>
+                <Link to="/login" className="link-to-register">
+                    Takaisin etusivulle
+                </Link>
+            </form>
         </div>
     );
-}
+};
 
 export default Svaihto;

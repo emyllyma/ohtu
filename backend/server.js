@@ -42,7 +42,7 @@ app.post('/api/users/login', async (req, res) => {
 app.post('/api/users/register', async (req, res) => {
   try {
     // Create new user
-    const user = new User({ email: req.body.email, password: req.body.password });
+    const user = new User({ email: req.body.email, password: req.body.password, name: req.body.name, lname: req.body.lname  });
     await user.save(); // save info
 
     res.status(201).send("User created");
