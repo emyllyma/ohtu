@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './App.css'; // Import the CSS file
 import { Link } from 'react-router-dom';
+import './Svaihto.css'; // Import the CSS file
 
 const Svaihto = () => {
     const [formState, setFormState] = useState({ name: "", email: "" });
@@ -32,7 +33,11 @@ const Svaihto = () => {
     }
 
     return (
-        <div>
+        <div className="svaihto-container">
+            <div className="svaihto-content">
+                <div className="otsikko">
+                <h1>Vaihda salasana</h1>
+                </div>
             <form onSubmit={submitHandler}>
                 <input
                     type="text"
@@ -40,7 +45,7 @@ const Svaihto = () => {
                     value={formState.name}
                     onChange={changeHandler}
                     className="border"
-                    placeholder="Name"
+                    placeholder="Nimi"
                 />
                 <input
                     type="email"
@@ -48,16 +53,17 @@ const Svaihto = () => {
                     value={formState.email}
                     onChange={changeHandler}
                     className="border"
-                    placeholder="Email"
+                    placeholder="Sähköposti"
                 />
-                <input type="submit" value="Send Email" />
+                <input type="submit" value="Lähetä uusi salasana" />
                 <Link to="/login" className="link-to-register">
-                    Back to Homepage
+                    Palaa etusivulle
                 </Link>
             </form>
             {/* Näytä ilmoitus vain, jos sähköposti on yritetty lähettää */}
-            {emailSent === true && <p>Email sent successfully!</p>}
-            {emailSent === false && <p>Email sending failed!</p>}
+            {emailSent === true && <p>Sähköpostiinne on nyt lähetetty linkki salasanan vaihtoa varten.</p>}
+            {emailSent === false && <p>Äshköpostin lähetys ei onnistunut.</p>}
+        </div>
         </div>
     );
 };

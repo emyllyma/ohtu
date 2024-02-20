@@ -1,0 +1,119 @@
+/* Resetoidaan ja asetetaan perusasetukset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Asetetaan taustakuva */
+  .login-container {
+    display: flex;
+    height: 100vh;
+    background-color: #272525; /* Taustaväri */
+    
+  }
+  
+  /* Sisällön asettelu */
+  .login-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%; /* Asetetaan sisällön maksimileveys */
+    margin: auto; /* Keskitetään sisältö sivulle */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .login-content h1 {
+    font-weight: 200;
+    color: #ccc;
+    margin-top: 0;
+    
+  }
+
+  h2 {
+    font-weight: 200;
+    color: #ccc;
+
+  }
+  /* Lomakkeen tyylit */
+  .login-content {
+    width: 60%;
+    max-width: 80%;
+  }
+  
+  .login-content label {
+    margin-bottom: 10px;
+    display: block;
+    color: #ccc;
+    
+  }
+  
+  .login-content input[type="email"],
+  .login-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-content button {
+    width: 40%;
+    padding: 10px;
+    background-color: #f4f6f8; /* Napin taustaväri */
+    color: #080808; /* Napin tekstiväri */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 60%;
+    
+  }
+  
+  .login-content button:hover {
+    background-color: #404447; /* Napin hover-tilan taustaväri */
+  }
+  
+  /* Linkkien tyylit */
+  .login-content a {
+    text-decoration: none;
+    color: #d1d2d3; /* Linkin väri */
+  }
+  
+  .login-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .forgot-password-link {
+    margin-right: auto;
+    
+  }
+  
+  .login-buttons button {
+    margin-left: auto;
+  }
+
+  .login-links{
+    align-content: center;
+    margin-top: 10%;
+  }
+
+ 
+  /* Valokuvan asettelu */
+  .login-image {
+    background-size: cover;
+    background-position: center;
+    background-color: aqua;
+    max-width: 50%; /* Asetetaan kuvan maksimileveys */
+    width: 60%;
+    background-image: url('pizza.jpg') ;
+    
+  }
+  

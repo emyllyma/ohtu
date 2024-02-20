@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asetetaan taustakuva */
+.svaihto-container {
+    display: flex;
+    height: 100vh;
+    background-color: #272525;
+    /* Taustaväri */
+}
+
+/* Sisällön asettelu */
+.svaihto-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    /* Sisällön leveys 60% */
+    margin: auto;
+    /* Keskitetään sisältö sivulle */
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20%;
+}
+
+.svaihto-content form {
+    width: 100%;
+    /* Täytä leveys */
+    max-width: 400px;
+    /* Maksimileveys */
+
+}
+
+.svaihto-content label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    /* Tekstin koko */
+    color: #fff;
+}
+
+.svaihto-content input {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    /* Tekstin koko */
+    padding: 10px;
+    width: 100%;
+    /* Täytä leveys */
+}
+
+.svaihto-content h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    /* Aseta otsikon koko */
+    margin-bottom: 5%;
+    /* Lisää tilaa otsikon alle */
+}
+
+
+.svaihto-content button {
+    margin-top: 20px;
+    font-size: 1.2em;
+    /* Tekstin koko */
+    padding: 10px 20px;
+    width: 50%;
+    /* Täytä leveys */
+    margin-left: 10%;
+}
+
+.svaihto-content p {
+    font-size: 1.2em;
+    /* Tekstin koko */
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.svaihto-content p a {
+    color: cornflowerblue;
+    /* Linkkiväri */
+}
+
+.links {
+    margin-top: 5%;
+}
+
+.otsikko {
+    color: #fff;
+    margin-bottom: 10%;
+    
+}
