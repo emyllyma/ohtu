@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ohtu/static/css/main.c5b9f973.css",
+    "main.js": "/ohtu/static/js/main.a9729d43.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/ohtu/static/js/787.9e9f4ffd.chunk.js",
+    "static/media/pizza.jpg": "/ohtu/static/media/pizza.1b954b688f1872f41fda.jpg",
+    "index.html": "/ohtu/index.html",
+    "main.c5b9f973.css.map": "/ohtu/static/css/main.c5b9f973.css.map",
+    "main.a9729d43.js.map": "/ohtu/static/js/main.a9729d43.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/ohtu/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5b9f973.css",
+    "static/js/main.a9729d43.js"
+  ]
+}
